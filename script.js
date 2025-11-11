@@ -67,7 +67,7 @@ function checkBalanceWarning() {
 
 // Calculate Subtotal
 function calculateSubtotal() {
-  return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  return cart.reduce((sum, item) => sum + item.price * item.quantity*123, 0);
 }
 
 // Total Items
@@ -141,7 +141,7 @@ function renderProducts(searchTerm = "") {
     card.innerHTML = `
             <img src="${product.image}" alt="${product.title}" class="w-full h-48 object-cover rounded mb-2">
             <h3 class="font-bold text-lg mb-1">${product.title.substring(0, 50)}...</h3>
-            <p class="text-orange-600 font-semibold text-xl mb-1">${product.price} BDT</p>
+            <p class="text-orange-600 font-semibold text-xl mb-1">${product.price*123} BDT</p>
             <p class="text-sm text-gray-600 mb-2">Rating: ${product.rating.rate} (${product.rating.count} reviews)</p>
             <button onclick="addToCart(${product.id})" class="w-full bg-orange-600 text-white py-2 rounded hover:bg-green-600 transition">Add to Cart</button>
         `;
@@ -296,12 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Add Money
   document.getElementById("add-money").addEventListener("click", addMoney);
-
-  // Banner Controls (you'll need to add these elements to your HTML)
-  // document.getElementById("next-banner").addEventListener("click", nextBannerSlide);
-  // document.getElementById("prev-banner").addEventListener("click", prevBannerSlide);
-  // setInterval(nextBannerSlide, 4000);
-
   // Review Controls
   document.getElementById("next-review").addEventListener("click", nextReviewSlide);
   document.getElementById("prev-review").addEventListener("click", prevReviewSlide);
@@ -333,4 +327,5 @@ document.addEventListener("DOMContentLoaded", () => {
       e.target.classList.add("text-yellow-200");
     });
   });
+
 });
