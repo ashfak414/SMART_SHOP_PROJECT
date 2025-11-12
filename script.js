@@ -188,6 +188,8 @@ function orderNow() {
   if (confirm("Confirm order?")) {
     alert("Order placed successfully!");
     cart = [];
+    balance -= total; 
+    updateBalanceDisplay(); 
     localStorage.setItem("cart", JSON.stringify(cart));
     discount = 0;
     document.getElementById("coupon-input").value = "";
@@ -327,4 +329,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
 
