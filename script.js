@@ -198,12 +198,10 @@ function orderNow() {
 // Banner Slider Functions
 function nextBannerSlide() {
   currentBannerIndex = (currentBannerIndex + 1) % bannerImages;
-  // This would need to be implemented based on your banner structure
 }
 
 function prevBannerSlide() {
   currentBannerIndex = (currentBannerIndex - 1 + bannerImages) % bannerImages;
-  // This would need to be implemented based on your banner structure
 }
 
 // Review Slider Functions
@@ -329,3 +327,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
